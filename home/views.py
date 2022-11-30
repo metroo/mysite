@@ -9,4 +9,9 @@ def home(request):
 
 def say_hello(request):
     person = {'name':'admin'}
-    return render(request , 'hello.html' , context=person)
+    return render(request , 'hello.html' , {'context':person})
+
+def detail(request , todo_id):
+    todo = Todo.objects.get(id = todo_id)
+    return render(request , 'detail.html',{'todo' :todo})
+
