@@ -1,0 +1,10 @@
+ {% extends 'base.html' %}
+
+ {% block content %}
+    <h3>Create Todo</h3>
+     <form action="" class="form-row" method="post" novalidate>
+    {%  csrf_token %}
+     {{ form.as_div }}
+         <input type="submit" value="create">
+     </form>
+ {% endblock %}
