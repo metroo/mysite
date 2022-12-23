@@ -8,6 +8,7 @@ class Todo(models.Model):
         permissions = (("can_mark_returned", "Set book as returned") ,)
     title = models.CharField(max_length=200)
     body = models.TextField()
+    slug = models.TextField()
     created = models.DateTimeField()
 
     def __str__(self):

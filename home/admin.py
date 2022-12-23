@@ -10,5 +10,6 @@ def title(self):
 class TodoAdmin(admin.ModelAdmin):
     list_display = (title , 'body', 'created')
     search_fields = ('title', 'body')
+    prepopulated_fields = {'slug': ('title',)}
 
 
