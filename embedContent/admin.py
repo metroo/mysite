@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.contrib.auth.models import Permission
+from django.contrib.contenttypes.models import ContentType
 from .models import embedContet
 # Register your models here.
 
@@ -7,3 +9,13 @@ class EmbedContentAdmin(admin.ModelAdmin):
     list_display = ('title', 'url' , 'published')
     search_fields = ('title', 'url')
     prepopulated_fields = {'slug': ('title',)}
+
+    def save_model(self, request, obj, form, change):
+        print(change)
+        content_type = ContentType.objects.get_for_model(embedContet)
+        # permission = Permission.objects.create(
+        #     codename=obj.slug,
+        #     name=obj.title,
+        #     content_type=content_type,
+        # )
+        super().save_model(request, obj, form, change)
