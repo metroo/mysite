@@ -3,13 +3,12 @@ from django.contrib import admin
 
 # Create your models here.
 class Todo(models.Model):
-    @admin.display(description='Name')
-    def title(self):
-        return self
+
     class Meta:
         permissions = (("can_mark_returned", "Set book as returned") ,)
     title = models.CharField(max_length=200)
     body = models.TextField()
+    slug = models.TextField()
     created = models.DateTimeField()
 
     def __str__(self):
