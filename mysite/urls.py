@@ -25,7 +25,7 @@ from users.views import CustomLoginView, ResetPasswordView, ChangePasswordView
 from users.forms import LoginForm
 
 urlpatterns = [
-    path('todo/', include('home.urls')),
+    path('embedContent/', include('embedContent.urls')),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
