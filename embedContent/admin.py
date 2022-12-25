@@ -12,7 +12,7 @@ class EmbedContentAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         try:
-            if(form.changed_data.index('slug')):
+            if 'slug' in  form.changed_data:
                 content_type = ContentType.objects.get_for_model(EmbedContent)
                 Permission.objects.filter(codename=form.initial.slug)
         except:
