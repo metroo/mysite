@@ -1,0 +1,21 @@
+{% extends "users/base.html" %}
+{% block title %} Home Page {% endblock title%}
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for todo in todos %}
+             <div class="col">
+                <div class="card h-100">
+                    <img src="" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ todo.name }}</h5>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+        </div>
+    {% endif %}
+{% endblock content %}

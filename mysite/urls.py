@@ -25,10 +25,10 @@ from users.views import CustomLoginView, ResetPasswordView, ChangePasswordView
 from users.forms import LoginForm
 
 urlpatterns = [
-    path('embedContent/', include('embedContent.urls')),
+    path('', include('embedContent.urls')),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
-    path('', include('users.urls')),
+    path('user/', include('users.urls')),
     path('login/', CustomLoginView.as_view(redirect_authenticated_user=True, template_name='users/login.html',
                                            authentication_form=LoginForm), name='login'),
 
