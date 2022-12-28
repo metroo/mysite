@@ -21,7 +21,7 @@ class EmbedContentAdmin(admin.ModelAdmin):
                 newslug = obj.slug
                 Permission.objects.filter(codename=lastslug.get('slug'), content_type_id=id).delete()
                 vote_count = Permission.objects.filter(codename=newslug).count()
-                print(vote_count)
+                #print(vote_count)
                 if(vote_count==0):
                     permission = Permission.objects.create(
                         codename=obj.slug,

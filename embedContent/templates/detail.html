@@ -1,6 +1,8 @@
-{% extends 'base.html' %}
+{% extends "users/base.html" %}
+{% block title %} {{ todo.title }}  {% endblock title%}
 {%  block content %}
-    <a href="{% url 'delete' todo.id %}" class="btn btn-danger">delete</a>
     <h3>{{ todo.title }}</h3>
-    <p>{{ todo.body }}</p>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="{{ todo.url }}" allowfullscreen></iframe>
+    </div>
 {%  endblock %}
