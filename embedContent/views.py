@@ -8,7 +8,6 @@ from django.contrib.contenttypes.models import ContentType
 
 # Create your views here.
 def home(request):
-
     if request.user.is_authenticated:
         user = request.user
         content_type = ContentType.objects.get_for_model(EmbedContent)
