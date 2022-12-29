@@ -3,11 +3,11 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3  ">
         {% for todo in todos %}
-             <div class="col">
+             <div class="col m-2">
                  <a href="{% url 'embedContent:details' todo.id %}">
-                    <div class="card  text-center h-100">
+                    <div class="card  shadow-sm text-center h-100">
                         <div class="card-body">
                             <img src="media/{{ todo.imageurl }}"   style="align-content:center;max-width:100px;max-height: 100px" alt="...">
                         </div>

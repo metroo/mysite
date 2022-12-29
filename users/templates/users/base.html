@@ -12,12 +12,25 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
     <title>{% block title %} {% endblock %} </title>
+    <style>
+        .site-header {
+          background-color: rgba(0, 0, 0, .85);
+          -webkit-backdrop-filter: saturate(180%) blur(20px);
+          backdrop-filter: saturate(180%) blur(20px);
+        }
+        .site-header a {
+          color: #8e8e8e;
+          transition: color .15s ease-in-out;
+        }
+        .site-header a:hover {
+          color: #fff;
+          text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-  <div class="container p-3 my-3">
-    <div class="row">
-      <div class="col-md-12">
-        <nav class="navbar navbar-expand-md navbar-light mb-3" style="background-color: #f0f5f5">
+<header class="site-header sticky-top py-1">
+ <nav class="navbar navbar-expand-md   "  >
           <a href="/" class="navbar-brand">Home</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -34,6 +47,10 @@
                 </div>
             </div>
         </nav>
+
+</header>
+<main class="  p-3 my-3">
+
         <!--Any flash messages pop up in any page because this is the base template-->
         {% if messages %}
           <div class="alert alert-dismissible" role="alert">
@@ -46,10 +63,8 @@
           </div>
         {% endif %}
         {% block content %}{% endblock %}
-      </div>
-    </div>
-  </div>
 
+</main>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -1,8 +1,23 @@
 {% extends "users/base.html" %}
 {% block title %} {{ todo.title }}  {% endblock title%}
 {%  block content %}
-    <h3>{{ todo.title }}</h3>
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="{{ todo.url }}" allowfullscreen></iframe>
+
+    <style>
+    .iframe_container {
+        background-image: url('/media/Fidget-spinner.gif');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .iframe_container iframe {
+        background: transparent;
+    }
+    </style>
+     <div class="embed-responsive embed-responsive-16by9 iframe_container">
+      <iframe onload="document.getElementById('spinner').style.display='none';"
+              class="embed-responsive-item" src="{{ todo.url }}"
+              noresize="noresize" data-view="fullScreenPreview" allow="geolocation 'self'; autoplay 'self'" >
+
+
+      </iframe>
     </div>
 {%  endblock %}
