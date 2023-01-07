@@ -40,7 +40,7 @@ class RegisterView(View):
             form.save()
 
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}')
+            messages.success(request, f' اکانت ساخته شد برای {username}')
 
             return redirect(to='login')
 
@@ -78,7 +78,7 @@ class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
 
 class ChangePasswordView(SuccessMessageMixin, PasswordChangeView):
     template_name = 'users/change_password.html'
-    success_message = "Successfully Changed Your Password"
+    success_message = "کلمه عبور با موفقیت تغییر پیدا کرد"
     success_url = reverse_lazy('users-home')
 
 
@@ -91,7 +91,7 @@ def profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Your profile is updated successfully')
+            messages.success(request, 'اطلاعات پروفایل بروز گردید')
             return redirect(to='users-profile')
     else:
         user_form = UpdateUserForm(instance=request.user)

@@ -3,14 +3,21 @@ from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 from .models import EmbedContent
 from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 from django.db import transaction
+
+@admin.display(description=_('title'))
+def title(self):
+    return self.title
 
 # Register your models here.
 @admin.register(EmbedContent)
 class EmbedContentAdmin(admin.ModelAdmin):
-    list_display = ('title', 'url' , 'published')
+    list_display = (title, 'url' , 'published')
     search_fields = ('title', 'url')
     prepopulated_fields = {'slug': ('title',)}
+
+
 
     def save_model(self, request, obj, form, change):
         content_type = ContentType.objects.get_for_model(EmbedContent)

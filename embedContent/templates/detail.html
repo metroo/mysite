@@ -13,12 +13,10 @@
         background: transparent;
     }
     </style>
-     <div class="embed-responsive embed-responsive-16by9 iframe_container">
-      <iframe onload="document.getElementById('spinner').style.display='none';"
-              class="embed-responsive-item" src="{{ todo.url }}"
-              noresize="noresize" data-view="fullScreenPreview" allow="geolocation 'self'; autoplay 'self'" >
-
-
-      </iframe>
+    <div class="ratio ratio-16x9 iframe_container">
+      <iframe onload="document.getElementById('spinner').style.display='none';" src="{{ todo.url }}"
+              title="todo.title" allowfullscreen></iframe>
     </div>
+
+
 {%  endblock %}
