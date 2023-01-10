@@ -6,9 +6,9 @@ from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 from django.db import transaction
 
-@admin.display(description=_('title'))
-def title(self):
-    return self.title
+#@admin.display(description=_('title'))
+#def title(self):
+#    return self.title
 
 # Register your models here.
 @admin.register(EmbedContent)

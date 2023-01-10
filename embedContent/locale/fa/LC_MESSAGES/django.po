@@ -23,4 +23,4 @@ msgstr "عنوان"
 
 #: .\models.py:9
 msgid "url"
-msgstr ""
+msgstr "آدرس"
