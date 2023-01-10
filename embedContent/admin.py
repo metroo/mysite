@@ -13,7 +13,7 @@ from django.db import transaction
 # Register your models here.
 @admin.register(EmbedContent)
 class EmbedContentAdmin(admin.ModelAdmin):
-    list_display = (title, 'url' , 'published')
+    list_display = ('title', 'url' , 'published')
     search_fields = ('title', 'url')
     prepopulated_fields = {'slug': ('title',)}
 
